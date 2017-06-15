@@ -359,7 +359,8 @@ public class ContextFunctionCatalogAutoConfiguration {
 		private boolean isGenericSupplier(ConfigurableListableBeanFactory factory,
 				String name) {
 			return factory.isTypeMatch(name,
-					ResolvableType.forClassWithGenerics(Supplier.class, Flux.class))
+//					ResolvableType.forClassWithGenerics(Supplier.class, Flux.class))
+					ResolvableType.forClass(Supplier.class))
 					&& !factory.isTypeMatch(name,
 							ResolvableType.forClassWithGenerics(Supplier.class,
 									ResolvableType.forClassWithGenerics(Flux.class,
@@ -369,8 +370,9 @@ public class ContextFunctionCatalogAutoConfiguration {
 		private boolean isGenericFunction(ConfigurableListableBeanFactory factory,
 				String name) {
 			return factory.isTypeMatch(name,
-					ResolvableType.forClassWithGenerics(Function.class, Flux.class,
-							Flux.class))
+					ResolvableType.forClass(Function.class))
+//					ResolvableType.forClassWithGenerics(Function.class, Flux.class,
+//							Flux.class))
 					&& !factory.isTypeMatch(name,
 							ResolvableType.forClassWithGenerics(Function.class,
 									ResolvableType.forClassWithGenerics(Flux.class,
@@ -382,7 +384,8 @@ public class ContextFunctionCatalogAutoConfiguration {
 		private boolean isGenericConsumer(ConfigurableListableBeanFactory factory,
 				String name) {
 			return factory.isTypeMatch(name,
-					ResolvableType.forClassWithGenerics(Consumer.class, Flux.class))
+//					ResolvableType.forClassWithGenerics(Consumer.class, Flux.class))
+					ResolvableType.forClass(Consumer.class))
 					&& !factory.isTypeMatch(name,
 							ResolvableType.forClassWithGenerics(Consumer.class,
 									ResolvableType.forClassWithGenerics(Flux.class,

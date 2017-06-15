@@ -1,0 +1,11 @@
+#spring:
+#  cloud:
+#    function:
+#      compile:
+#        words:
+#          type: supplier
+#          lambda: ()->Flux.just("foo","bar", "baz")
+#        uppercase:
+#          lambda: s->s.toUpperCase()
+#          inputType: String
+#          outputType: String
